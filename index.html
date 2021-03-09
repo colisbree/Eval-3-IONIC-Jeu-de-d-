@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- ligne suivante pour affichage sans zoom - ne concerne que les smartphones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <!-- Ligne suivante - accès ionic.css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>TITRE DE LA PAGE</title>
+    <meta name="description" content="">
+</head>
+<body> 
+    <div class="couleur-fond">
+        <main class="table-jeu ">
+            <ion-grid>
+                <ion-row id="ligne1" >
+                    <ion-col size="4">
+                        <div>
+                            
+                        </div>
+                    </ion-col size="4">
+                        <ion-col >
+                            <div>
+                                <ion-icon name="add-circle-outline"></ion-icon>
+                            </div>
+                            <div>
+                                NEW GAME
+                            </div>
+                        </ion-col>
+                        <ion-col size="4">
+                            <div>
+                                
+                            </div>
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row id="ligne2">
+                    <ion-col size="4" class="presentation ion-align-self-start">
+                        <div class="presentation-item">
+                            <div class="joueur">
+                                PLAYER 1
+                            </div>
+                            <div class="score">
+                                43
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col size="4" class="ion-align-self-center">
+                        <div>
+                            <img src="de-3.png">
+                        </div>
+                    </ion-col>
+                    <ion-col size="4" class="presentation ion-align-self-start">
+                        <div class="presentation-item">
+                            <div class="joueur">
+                                PLAYER 2
+                            </div>
+                            <div class="score">
+                                72
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row id="ligne3">
+                    <ion-col size="4" class="ion-align-self-start">
+                        <div class="presentation-item">
+                            <div class="score-courant">
+                                CURRENT
+                                <p class="score-courant-couleur">
+                                    11
+                                </p>
+                            </div>    
+                        </div>
+                    </ion-col>
+                    <ion-col size="4" class="presentation ion-align-self-start">
+                        <div class="presentation-item-choix">
+                            <div>
+                                <ion-icon name="sync-outline"></ion-icon>
+                            </div>  
+                            <div>
+                                ROLL DICE
+                            </div>
+                        </div>
+                        <div class="presentation-item-choix">
+                            <div>
+                                <ion-icon name="download-outline"></ion-icon>
+                            </div>
+                            <div>
+                                HOLD
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col size="4" class="ion-align-self-start">
+                        <div class="presentation-item">
+                            <div class="score-courant">
+                                CURRENT
+                                <p class="score-courant-couleur">
+                                    0
+                                </p>
+                            </div>    
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </main>
+    </div>
+
+    <!-- Lignes suivantes - accès framework ionic.js-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- Our JavaScript -->
+    <script src=""></script>
+</body>
+</html>
+

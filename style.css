@@ -1,0 +1,95 @@
+body{
+    color:dimgray;
+}
+
+.couleur-fond {
+    background: rgb(251,217,63);
+    background: radial-gradient(circle,   
+                rgb(216, 183, 37) 0%, 
+                rgb(143, 114, 21) 100%);
+    margin: 10px;
+    padding: 5px;
+}
+.table-jeu {
+    background: rgb(233,233,233);
+    background: linear-gradient(90deg, 
+                rgba(233,233,233,1) 0%, 
+                rgba(233,233,233,1) 50%, 
+                rgba(252,252,252,1) 50%, 
+                rgba(252,252,252,1) 100%);
+    margin: 1%; 
+}
+
+#ligne1 {
+    height: 100px;
+}
+#ligne2 {
+    height: 200px;
+}
+#ligne3 {
+    height: 150px;
+}
+
+ion-col {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+ion-icon {
+    font-size: 32px;
+    color:crimson;
+    float: left;
+    padding-right: 10px;
+  }
+
+.presentation{
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+.presentation-item{
+    margin-top: 30px;
+}
+
+.presentation-item-choix{
+    margin-top: 25px;
+}
+
+.presentation-item-choix,  
+.presentation-item .joueur .score{
+    width:100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.joueur {
+    font-size: 2em;
+}
+
+.score {
+    font-size: 5em;
+    color:crimson;
+    font-weight:100;
+    text-align: center;
+}
+
+.score-courant{
+    width: 100px;
+    height: 80px;
+    background-color: crimson;
+    text-align: center;
+    padding:10px;
+}
+
+.score-courant-couleur {
+    color: white;
+    font-size: 1.2em;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+}
