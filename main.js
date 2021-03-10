@@ -35,11 +35,9 @@ function initial_start() {
     return alert.present();
 }
 
-function roll_dice() {
-    // récupération du joueur actif
-    const joueur = document.getElementById("joueur_actif").value;
-    if(joueur == undefined || joueur == null){
-        const alert = document.createElement('ion-alert');
+
+function erreur() {
+    const alert = document.createElement('ion-alert');
         alert.cssClass = 'my-custom-class';
         alert.header = 'Erreur !';
         alert.subHeader = '----------------------';
@@ -47,7 +45,42 @@ function roll_dice() {
         alert.buttons = ['OK'];
 
         document.body.appendChild(alert);
-        return alert.present();        
+        return alert.present();
+}
+
+function joueur_actif(joueur){
+    // RAZ des variables temporaires
+    document.getElementById('score-temp-P' + joueur).value=0;
+    document.getElementById("score-current-player-" + joueur).innerText=0;
+    document.getElementById("actif" + joueur).style.display="none";
+    
+    // nouveau joueur actif
+    let nouveauJoueurActif = joueur % 2
+    nouveauJoueurActif = nouveauJoueurActif == 0 ? 1 : 2;
+    document.getElementById("joueur_actif").value=nouveauJoueurActif;
+    document.getElementById("actif" + nouveauJoueurActif).style.display="";
+    return;
+}
+
+function roll_dice() {
+    // récupération du joueur actif
+    const joueur = document.getElementById("joueur_actif").value;
+    if(joueur == undefined || joueur == null){
+        erreur();        
+    }
+
+    // récupération du score global
+    let scoreGlobal = document.getElementById("score-P" + joueur).value;
+    if (scoreGlobal >= 100){
+        const alert = document.createElement('ion-alert');
+        alert.cssClass = 'my-custom-class';
+        alert.header = 'Désolé !';
+        alert.subHeader = '----------------------';
+        alert.message = "<p>La partie est terminée.</p><p>Cliquez sur NEW GAME pour commencer une nouvelle partie.</p>";
+        alert.buttons = ['OK'];
+   
+        document.body.appendChild(alert);
+        return alert.present();
     }
     
     // lancement du dé
@@ -63,13 +96,8 @@ function roll_dice() {
         alert.message = "Désolé, vous avez tirer un 1 !<br/>Vous passez votre tour...";
         alert.buttons = ['OK'];
 
-        document.getElementById('score-temp-P' + joueur).value=0;
-        document.getElementById("score-current-player-" + joueur).innerText=0;
-        document.getElementById("actif" + joueur).style.display="none";
-        let nouveauJoueurActif = joueur % 2
-        nouveauJoueurActif = nouveauJoueurActif == 0 ? 1 : 2;
-        document.getElementById("joueur_actif").value=nouveauJoueurActif;
-        document.getElementById("actif" + nouveauJoueurActif).style.display="";
+        // passage de la main à l'ature joueur
+        joueur_actif(joueur)
         
         document.body.appendChild(alert);
         return alert.present();
@@ -84,4 +112,52 @@ function roll_dice() {
     document.getElementById("score-current-player-" + joueur).innerText=scoreTemp;
 }
 
+function hold(){
+    // récupération du joueur actif
+    const joueur = document.getElementById("joueur_actif").value;
+    if(joueur == undefined || joueur == null){
+        erreur();        
+    }
 
+    // récupération score temp
+    let scoreTemp = document.getElementById("score-temp-P" + joueur).value;
+
+    // ajout du score temp au score global
+    let scoreGlobal = document.getElementById("score-P" + joueur).value;
+    scoreGlobal = scoreGlobal + scoreTemp;
+
+    // affichage du score global et reset du score temp
+    document.getElementById('score-player-' + joueur).innerText=scoreGlobal;
+    document.getElementById("score-P" + joueur).value= scoreGlobal;
+    document.getElementById('score-current-player-' + joueur).innerText=0;
+    document.getElementById("score-temp-P" + joueur).value= 0;
+
+    // score global >=100
+    if(scoreGlobal >= 100){
+        const alert = document.createElement('ion-alert');
+        alert.cssClass = 'my-custom-class';
+        alert.header = 'Felicitation !';
+        alert.subHeader = '----------------------';
+        alert.message = "Le joueur " + joueur + " est le gagnant !<br/>avec un score de " + scoreGlobal;
+        alert.buttons = ['OK'];
+        
+        document.body.appendChild(alert);
+        return alert.present();
+    }
+
+    // passage de la main à l'ature joueur
+    const alert = document.createElement('ion-alert');
+    alert.cssClass = 'my-custom-class';
+    alert.header = 'Yes ! ...';
+    alert.subHeader = '----------------------';
+    alert.message = "Votre score provisoire est sauvé.<br/>Vous passez votre tour...";
+    alert.buttons = ['OK'];
+
+    // passage de la main à l'ature joueur
+    joueur_actif(joueur)
+    
+    document.body.appendChild(alert);
+    return alert.present();
+
+
+}
