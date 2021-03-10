@@ -41,12 +41,17 @@ ion-icon {
     color:crimson;
     float: left;
     padding-right: 10px;
-  }
+}
+
+ion-icon.p1 {
+    float: right; 
+    padding-left: 10px;
+}
 
 .presentation{
     display:flex;
     flex-wrap: wrap;
-  }
+}
 
 .presentation-item{
     margin-top: 30px;

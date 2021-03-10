@@ -24,12 +24,12 @@
                             
                         </div>
                     </ion-col size="4">
-                        <ion-col >
+                        <ion-col>
                             <div>
                                 <ion-icon name="add-circle-outline"></ion-icon>
                             </div>
                             <div>
-                                NEW GAME
+                                <span id="new-game" onclick="initial_start()">NEW GAME</span>
                             </div>
                         </ion-col>
                         <ion-col size="4">
@@ -44,9 +44,10 @@
                         <div class="presentation-item">
                             <div class="joueur">
                                 PLAYER 1
+                                <ion-icon name="ellipse" id="actif1" class="p1" style="display:none"></ion-icon>
                             </div>
                             <div class="score">
-                                43
+                                <span id="score-player-one">43</span>
                             </div>
                         </div>
                     </ion-col>
@@ -59,9 +60,10 @@
                         <div class="presentation-item">
                             <div class="joueur">
                                 PLAYER 2
+                                <ion-icon name="ellipse" id="actif2" style="display:none"></ion-icon>
                             </div>
                             <div class="score">
-                                72
+                                <span id="score-player-two">72</span>
                             </div>
                         </div>
                     </ion-col>
@@ -73,7 +75,7 @@
                             <div class="score-courant">
                                 CURRENT
                                 <p class="score-courant-couleur">
-                                    11
+                                    <span id="score-current-player-one">11</span>
                                 </p>
                             </div>    
                         </div>
@@ -101,7 +103,7 @@
                             <div class="score-courant">
                                 CURRENT
                                 <p class="score-courant-couleur">
-                                    0
+                                    <span id="score-current-player-two">0</span>
                                 </p>
                             </div>    
                         </div>
@@ -115,7 +117,7 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <!-- Our JavaScript -->
-    <script src=""></script>
+    <script src="main.js"></script>
 </body>
 </html>
 
