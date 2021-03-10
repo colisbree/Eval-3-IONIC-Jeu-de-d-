@@ -27,7 +27,7 @@
                     </ion-col size="4">
                         <ion-col>
                             <div>
-                                <ion-icon name="add-circle-outline"></ion-icon>
+                                <span id="new-game" onclick="initial_start()"><ion-icon name="add-circle-outline"></ion-icon></span>
                             </div>
                             <div>
                                 <span id="new-game" onclick="initial_start()">NEW GAME</span>
@@ -84,7 +84,7 @@
                     <ion-col size="4" class="presentation ion-align-self-start">
                         <div class="presentation-item-choix">
                             <div>
-                                <ion-icon name="sync-outline"></ion-icon>
+                                <span id="roll" onclick="roll_dice()"><ion-icon name="sync-outline"></ion-icon></span>
                             </div>  
                             <div>
                                 <span id="roll" onclick="roll_dice()">ROLL DICE</span>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="presentation-item-choix">
                             <div>
-                                <ion-icon name="download-outline"></ion-icon>
+                                <span id="hold" onclick="hold()"><ion-icon name="download-outline"></ion-icon></span>
                             </div>
                             <div>
                                 <span id="hold" onclick="hold()">HOLD</span>
