@@ -18,6 +18,7 @@
     <div class="couleur-fond">
         <main class="table-jeu ">
             <ion-grid>
+                
                 <ion-row id="ligne1" >
                     <ion-col size="4">
                         <div>
@@ -47,13 +48,13 @@
                                 <ion-icon name="ellipse" id="actif1" class="p1" style="display:none"></ion-icon>
                             </div>
                             <div class="score">
-                                <span id="score-player-one">43</span>
+                                <span id="score-player-1">43</span>
                             </div>
                         </div>
                     </ion-col>
                     <ion-col size="4" class="ion-align-self-center">
                         <div>
-                            <img src="de-3.png">
+                            <img src="de-3.png" id="valeur-de">
                         </div>
                     </ion-col>
                     <ion-col size="4" class="presentation ion-align-self-start">
@@ -63,7 +64,7 @@
                                 <ion-icon name="ellipse" id="actif2" style="display:none"></ion-icon>
                             </div>
                             <div class="score">
-                                <span id="score-player-two">72</span>
+                                <span id="score-player-2">72</span>
                             </div>
                         </div>
                     </ion-col>
@@ -75,7 +76,7 @@
                             <div class="score-courant">
                                 CURRENT
                                 <p class="score-courant-couleur">
-                                    <span id="score-current-player-one">11</span>
+                                    <span id="score-current-player-1">11</span>
                                 </p>
                             </div>    
                         </div>
@@ -86,7 +87,7 @@
                                 <ion-icon name="sync-outline"></ion-icon>
                             </div>  
                             <div>
-                                ROLL DICE
+                                <span id="roll" onclick="roll_dice()">ROLL DICE</span>
                             </div>
                         </div>
                         <div class="presentation-item-choix">
@@ -103,7 +104,7 @@
                             <div class="score-courant">
                                 CURRENT
                                 <p class="score-courant-couleur">
-                                    <span id="score-current-player-two">0</span>
+                                    <span id="score-current-player-2">0</span>
                                 </p>
                             </div>    
                         </div>
@@ -113,6 +114,12 @@
         </main>
     </div>
 
+    <!-- variables des joueurs -->
+    <span id="joueur_actif" value=""></span>
+    <span id="score-P1" value=""></span>
+    <span id="score-P2" value=""></span>
+    <span id="score-temp-P1" value=""></span>
+    <span id="score-temp-P2" value=""></span>
     <!-- Lignes suivantes - accès framework ionic.js-->
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
